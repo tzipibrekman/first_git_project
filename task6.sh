@@ -11,11 +11,12 @@ row=0
 coulmn=0
 for user in $users; do 
         for detail in $user; do
+             echo $coulmn
+
             array[row,coulmn]="$detail"
             ((coulmn++))
             echo $coulmn
 	   done
-         coulmn=0
    ((row++))
 done
 echo "${array[0,0]}"
@@ -24,6 +25,6 @@ for ((i=0; i<rows; i++)); do
   for ((j=0; j<cols; j++)); do
     echo -n "${array[$i,$j]} "
   done
-  echo 
+   
 done
 echo end of file
