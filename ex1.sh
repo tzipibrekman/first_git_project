@@ -46,5 +46,5 @@ done
 
 #zip folder
 
-zip -r "$(date +"%Y-%m-%d_%H-%M-%S").zip" "downloads"
+zip -r "$(date +"%Y-%m-%d_%H-%M-%S").zip" "$directory_path"
 
