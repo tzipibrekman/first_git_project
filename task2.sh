@@ -5,9 +5,6 @@ if [ -f $1 ]; then
 	IFS=$2 read -ra split_content <<< $content
 	count=1
 	
-	echo "$2"
-	echo "$content"
-	echo"$split_content"
 	for filed in "${split_content[@]}"; do
 		echo "filed $count: $filed"
 		((count++))
