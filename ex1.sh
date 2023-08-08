@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Check if arguments num is valid
 if [ $# -lt 2 ];
 then
@@ -47,4 +48,5 @@ done
 #zip folder
 
 zip -r "$(date +"%Y-%m-%d_%H-%M-%S").zip" "$directory_path"
+
 

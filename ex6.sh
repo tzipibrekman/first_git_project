@@ -1,4 +1,5 @@
 #!/bin/bash
+
 count=$(grep -c '/bin/bash' /etc/passwd)
 users=$(grep "/bin/bash" /etc/passwd)
 row=0
@@ -23,6 +24,3 @@ for ((i=0;i<$count;i++)); do
    done
    echo
 done
-
-
-
