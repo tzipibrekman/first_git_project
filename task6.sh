@@ -3,7 +3,7 @@ count=$(grep -c '/bin/bash' /etc/passwd)
 users=$(grep "/bin/bash" /etc/passwd)
 row=0
 coulmn=0
-
+cols=7
 declare -A array
 
 
