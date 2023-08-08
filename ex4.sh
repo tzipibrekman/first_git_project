@@ -1,33 +1,16 @@
-#!/bin/bush
+#!/bin/bash
 
-declare -A alphbet
-
-for i in {a..z}; do
-         alphabet["$i"]=$(printf "%d" "'$i'")
-done
-
-
-for i in {A..Z}; do
-         alphabet["$i"]=$(printf "%d" "'$i'")
-done
-
-if [ $# -gt 0 ]; then
-   for letter in "$@"; do
-       value='${alphabet["$letter"]}'
-       if [ -n $value ] ; do
-          echo "$letter = $value"
-       else
-          echo "$letter is not a valid letter."
-       fi
-   done
+if [ $# -eq 0 ]; then
+	read -p "Enter alpabetical letters: " -a input
 else
-   read -p "Enter alpabetical letters: " input
-   for letter in $input; do
-       value='${alphabet["$letter"]}'
-       if [ -n $value ] ; do
-          echo "$letter = $value"
-       else 
-          echo "$letter is not a valid letter."
-       fi
-   done
+	input=("$@")
 fi
+declare -A dValue
+for letter in "${input[@]}"; do
+	value=$(printf "%d" "'$letter'")
+	dValue["$letter"]="$value"
+done
+
+for letter in "${!dValue[@]}"; do 
+	echo "$letter = ${dValue[$letter]}"
+done
